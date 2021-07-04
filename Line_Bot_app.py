@@ -42,31 +42,31 @@ def handle_message(event):
     reply_msg = '看不懂你說什麼'
 
     # Add reply 貼圖, do not forget import StickerSendMessage from linebot.model
-    if '睡覺貼圖' in msg:
+    if msg == '睡覺貼圖':
         sticker_message = StickerSendMessage(
             package_id='1',
             sticker_id='1'
         )
-    elif '愛妳貼圖' in msg:
+    elif msg == '愛妳貼圖':
         sticker_message = StickerSendMessage(
             package_id='8525',
             sticker_id='16581301'
         )
-    elif '好的貼圖' in msg:
+    elif msg == '好的貼圖':
         sticker_message = StickerSendMessage(
             package_id='6370',
             sticker_id='11088016'
         )
-    elif '謝謝貼圖' in msg:
+    elif msg == '謝謝貼圖':
         sticker_message = StickerSendMessage(
             package_id='6362',
             sticker_id='11087928'
         )  
-              
-        line_bot_api.reply_message(
-            event.reply_token,
-            sticker_message)
-        return
+
+    line_bot_api.reply_message(
+        event.reply_token,
+        sticker_message)
+    return
 
     if msg in ['hi', 'Hi']:
         reply_msg = 'hi, how are you ?'
