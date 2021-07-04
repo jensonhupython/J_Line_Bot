@@ -45,7 +45,7 @@ def handle_message(event):
         reply_msg = 'hi, how are you ?'
     elif msg == '你吃飯了嗎':
         reply_msg = '還沒'
-    elif msg == '你是誰'
+    elif msg == '你是誰':
         reply_msg = '我是機器人'
     elif '訂位' in msg:
         reply_msg = '您想訂位, 是嗎?'
