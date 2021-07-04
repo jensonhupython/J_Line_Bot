@@ -47,65 +47,109 @@ def handle_message(event):
             package_id='1',
             sticker_id='1'
         )
+        line_bot_api.reply_message(
+        event.reply_token,
+        sticker_message)
+        return        
     elif msg == '愛妳貼圖':
         sticker_message = StickerSendMessage(
             package_id='8525',
             sticker_id='16581301'
         )
+        line_bot_api.reply_message(
+        event.reply_token,
+        sticker_message)
+        return        
     elif msg == '好的貼圖':
         sticker_message = StickerSendMessage(
             package_id='6370',
             sticker_id='11088016'
         )
+        line_bot_api.reply_message(
+        event.reply_token,
+        sticker_message)
+        return        
     elif msg == '休息貼圖':
         sticker_message = StickerSendMessage(
             package_id='6362',
             sticker_id='11087930'
         )  
+        line_bot_api.reply_message(
+        event.reply_token,
+        sticker_message)
+        return        
     elif msg == '謝謝貼圖':
         sticker_message = StickerSendMessage(
             package_id='6362',
             sticker_id='11087928'
         )
+        line_bot_api.reply_message(
+        event.reply_token,
+        sticker_message)
+        return        
     elif msg == '加油貼圖':
         sticker_message = StickerSendMessage(
             package_id='6362',
             sticker_id='11087933'
         )
+        line_bot_api.reply_message(
+        event.reply_token,
+        sticker_message)
+        return        
     elif msg == '好累貼圖':
         sticker_message = StickerSendMessage(
             package_id='6362',
             sticker_id='11087923'
-        )        
+        ) 
+        line_bot_api.reply_message(
+        event.reply_token,
+        sticker_message)
+        return
     elif msg == '辛苦貼圖':
         sticker_message = StickerSendMessage(
             package_id='8525',
             sticker_id='16581300'
         )
+        line_bot_api.reply_message(
+        event.reply_token,
+        sticker_message)
+        return        
     elif msg == '慌張貼圖':
         sticker_message = StickerSendMessage(
             package_id='8525',
             sticker_id='16581311'
-        )    
+        )
+        line_bot_api.reply_message(
+        event.reply_token,
+        sticker_message)
+        return
     elif msg == '道歉貼圖':
         sticker_message = StickerSendMessage(
             package_id='8525',
             sticker_id='16581298'
         )
+        line_bot_api.reply_message(
+        event.reply_token,
+        sticker_message)
+        return        
     elif msg == '期待貼圖':
         sticker_message = StickerSendMessage(
             package_id='8525',
             sticker_id='16581299'
         )  
+        line_bot_api.reply_message(
+        event.reply_token,
+        sticker_message)
+        return        
     elif msg == '問號貼圖':
         sticker_message = StickerSendMessage(
             package_id='8525',
             sticker_id='16581306'
         )
-    line_bot_api.reply_message(
+        line_bot_api.reply_message(
         event.reply_token,
         sticker_message)
-    return
+        return
 
     if msg in ['hi', 'Hi']:
         reply_msg = 'hi, how are you ?'
