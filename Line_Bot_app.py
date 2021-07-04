@@ -49,7 +49,12 @@ def handle_message(event):
         reply_msg = '我是機器人'
     elif '訂位' in msg:
         reply_msg = '您想訂位, 是嗎?'
-
+    elif msg == '今天天氣好嗎':
+        reply_msg = '今天天氣很好, 適合走走'
+    elif msg == '早餐想吃什麼':
+        reply_msg = '薯餅蛋吐司跟菲力漢堡加蛋'
+    elif '心情' in msg:
+        reply_msg = '每天都要保持好的心情'
     line_bot_api.reply_message(
         event.reply_token,
         # 目前修改程式碼的部分, 是調整讓機器人回覆什麼
