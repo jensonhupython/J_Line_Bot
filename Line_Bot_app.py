@@ -151,6 +151,27 @@ def handle_message(event):
         sticker_message)
         return
 
+    if msg == '選擇餐廳':
+        buttons_template_message = TemplateSendMessage(
+            alt_text='Buttons template',
+            template=ButtonsTemplate(
+            title='Restaurant Menu',
+            text='請選擇類型',
+                actions=[
+                    MessageTemplateAction(
+                        label='台式餐廳',
+                        text='option one',
+                     ),
+                    MessageTemplateAction(
+                        label='義式餐廳',
+                        text='option two',
+                    )
+                ]
+            )
+        )
+        line_bot_api.reply_message(event.reply_token, buttons_template_message)
+        return
+
     if msg in ['hi', 'Hi']:
         reply_msg = 'hi, how are you ?'
     elif msg == '你吃飯了嗎':
