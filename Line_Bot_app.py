@@ -162,10 +162,19 @@ def handle_message(event):
     elif msg == '今天天氣好嗎':
         reply_msg = '今天天氣很好, 適合走走'
     elif msg == '早餐想吃什麼':
-        reply_msg = '薯餅蛋吐司跟菲力漢堡加蛋'
+        reply_msg = '菲力漢堡加蛋跟一杯大冰美式咖啡'
     elif '心情' in msg:
         reply_msg = '每天都要保持好的心情'
-
+    elif '情人節快樂' in msg:
+        reply_msg = 'Dear Peggy 2022 情人節快樂, 很開心, 很幸運能有您這位那麼棒的女友, 喜歡跟您再一起的任何時光, 雖然不像其他人常到處玩或是大魚大肉, 但是我更喜歡跟您充滿愛的相處時光XD'
+        sticker_message = StickerSendMessage(
+            package_id='8525',
+            sticker_id='16581301'
+        )
+        line_bot_api.reply_message(
+        event.reply_token,
+        sticker_message)
+        
     line_bot_api.reply_message(
         event.reply_token,
         # 目前修改程式碼的部分, 是調整讓機器人回覆什麼
