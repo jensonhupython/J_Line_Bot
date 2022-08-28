@@ -48,8 +48,8 @@ def handle_message(event):
             sticker_id='1'
         )
         line_bot_api.reply_message(
-        event.reply_token,
-        sticker_message)
+            event.reply_token,
+            sticker_message)
         return        
     elif msg == '愛妳':
         sticker_message = StickerSendMessage(
@@ -57,8 +57,8 @@ def handle_message(event):
             sticker_id='16581301'
         )
         line_bot_api.reply_message(
-        event.reply_token,
-        sticker_message)
+            event.reply_token,
+            sticker_message)
         return        
     elif msg == '好的':
         sticker_message = StickerSendMessage(
@@ -66,8 +66,8 @@ def handle_message(event):
             sticker_id='11088016'
         )
         line_bot_api.reply_message(
-        event.reply_token,
-        sticker_message)
+            event.reply_token,
+            sticker_message)
         return        
     elif msg == '休息貼圖':
         sticker_message = StickerSendMessage(
@@ -75,8 +75,8 @@ def handle_message(event):
             sticker_id='11087930'
         )  
         line_bot_api.reply_message(
-        event.reply_token,
-        sticker_message)
+            event.reply_token,
+            sticker_message)
         return        
     elif msg == '謝謝':
         sticker_message = StickerSendMessage(
@@ -84,8 +84,8 @@ def handle_message(event):
             sticker_id='11087928'
         )
         line_bot_api.reply_message(
-        event.reply_token,
-        sticker_message)
+            event.reply_token,
+            sticker_message)
         return        
     elif msg == '加油':
         sticker_message = StickerSendMessage(
@@ -93,8 +93,8 @@ def handle_message(event):
             sticker_id='11087933'
         )
         line_bot_api.reply_message(
-        event.reply_token,
-        sticker_message)
+            event.reply_token,
+            sticker_message)
         return        
     elif msg == '好累':
         sticker_message = StickerSendMessage(
@@ -102,17 +102,17 @@ def handle_message(event):
             sticker_id='11087923'
         ) 
         line_bot_api.reply_message(
-        event.reply_token,
-        sticker_message)
+            event.reply_token,
+            sticker_message)
         return
-    elif msg == '辛苦':
+    elif msg == '辛苦了':
         sticker_message = StickerSendMessage(
             package_id='8525',
             sticker_id='16581300'
         )
         line_bot_api.reply_message(
-        event.reply_token,
-        sticker_message)
+            event.reply_token,
+            sticker_message)
         return        
     elif msg == '慌張':
         sticker_message = StickerSendMessage(
@@ -120,8 +120,8 @@ def handle_message(event):
             sticker_id='16581311'
         )
         line_bot_api.reply_message(
-        event.reply_token,
-        sticker_message)
+            event.reply_token,
+            sticker_message)
         return
     elif msg == '道歉':
         sticker_message = StickerSendMessage(
@@ -129,8 +129,8 @@ def handle_message(event):
             sticker_id='16581298'
         )
         line_bot_api.reply_message(
-        event.reply_token,
-        sticker_message)
+            event.reply_token,
+            sticker_message)
         return        
     elif msg == '期待':
         sticker_message = StickerSendMessage(
@@ -138,8 +138,8 @@ def handle_message(event):
             sticker_id='16581299'
         )  
         line_bot_api.reply_message(
-        event.reply_token,
-        sticker_message)
+            event.reply_token,
+            sticker_message)
         return        
     elif msg == '問號':
         sticker_message = StickerSendMessage(
@@ -147,8 +147,8 @@ def handle_message(event):
             sticker_id='16581306'
         )
         line_bot_api.reply_message(
-        event.reply_token,
-        sticker_message)
+            event.reply_token,
+            sticker_message)
         return
 
     if msg == '選擇餐廳':
@@ -188,17 +188,7 @@ def handle_message(event):
         reply_msg = '每天都要保持好的心情'
     elif '生日快樂' in msg:
         reply_msg = '今天是您農曆八月二日誕生日,  祝您生日快樂, 萬事如意, 天天好心情~'
-        line_bot_api.reply_message(
-        event.reply_token,
-        TextSendMessage(text=reply_msg))
 
-        sticker_message = StickerSendMessage(
-            package_id='8525',
-            sticker_id='16581301'
-        )
-        line_bot_api.reply_message(event.reply_token, sticker_message)
-        return
-        
     line_bot_api.reply_message(
         event.reply_token,
         # 目前修改程式碼的部分, 是調整讓機器人回覆什麼
