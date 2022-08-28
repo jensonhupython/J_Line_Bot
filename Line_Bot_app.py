@@ -187,24 +187,23 @@ def handle_message(event):
     elif '心情' in msg:
         reply_msg = '每天都要保持好的心情'
     elif msg == '生日快樂':
-        emoji = 
-        [
-            {
-                "index": 0, # 要放的位置
-                "productId": "5ac223c6040ab15980c9b44a", # 所屬組合 ID
-                "emojiId": "035" # emoji ID
-            },
-            {
-                "index": 37,
-                "productId": "5ac223c6040ab15980c9b44a",
-                "emojiId": "008"
-            }
-        ]
-        line_bot_api.reply_message(
-            event.reply_token,
-            TextSendMessage(text='$ 今天是您農曆八月二日誕生日,  祝您生日快樂, 萬事如意, 天天好心情~ $',  emojis=emoji))
-
-        return
+        # emoji = 
+        # [
+        #     {
+        #         "index": 0, # 要放的位置
+        #         "productId": "5ac223c6040ab15980c9b44a", # 所屬組合 ID
+        #         "emojiId": "035" # emoji ID
+        #     },
+        #     {
+        #         "index": 37,
+        #         "productId": "5ac223c6040ab15980c9b44a",
+        #         "emojiId": "008"
+        #     }
+        # ]
+        # line_bot_api.reply_message(
+        #     event.reply_token,
+        #     TextSendMessage(text='$ 今天是您農曆八月二日誕生日,  祝您生日快樂, 萬事如意, 天天好心情~ $',  emojis=emoji))
+        reply_msg = '今天是您農曆八月二日誕生日,  祝您生日快樂, 萬事如意, 天天好心情~'
 
     line_bot_api.reply_message(
         event.reply_token,
