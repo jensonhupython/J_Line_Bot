@@ -188,7 +188,17 @@ def handle_message(event):
         reply_msg = '每天都要保持好的心情'
     elif '生日快樂' in msg:
         reply_msg = '今天是您農曆八月二日誕生日,  祝您生日快樂, 萬事如意, 天天好心情~'
+        line_bot_api.reply_message(
+        event.reply_token,
+        TextSendMessage(text=reply_msg))
 
+        sticker_message = StickerSendMessage(
+            package_id='8525',
+            sticker_id='16581301'
+        )
+        line_bot_api.reply_message(event.reply_token, sticker_message)
+        return
+        
     line_bot_api.reply_message(
         event.reply_token,
         # 目前修改程式碼的部分, 是調整讓機器人回覆什麼
