@@ -42,7 +42,7 @@ def handle_message(event):
     reply_msg = '看不懂你說什麼'
 
     # Add reply 貼圖, do not forget import StickerSendMessage from linebot.model
-    if msg == '睡覺貼圖':
+    if msg == '睡覺':
         sticker_message = StickerSendMessage(
             package_id='1',
             sticker_id='1'
@@ -51,7 +51,7 @@ def handle_message(event):
         event.reply_token,
         sticker_message)
         return        
-    elif msg == '愛妳貼圖':
+    elif msg == '愛妳':
         sticker_message = StickerSendMessage(
             package_id='8525',
             sticker_id='16581301'
@@ -60,7 +60,7 @@ def handle_message(event):
         event.reply_token,
         sticker_message)
         return        
-    elif msg == '好的貼圖':
+    elif msg == '好的':
         sticker_message = StickerSendMessage(
             package_id='6370',
             sticker_id='11088016'
@@ -78,7 +78,7 @@ def handle_message(event):
         event.reply_token,
         sticker_message)
         return        
-    elif msg == '謝謝貼圖':
+    elif msg == '謝謝':
         sticker_message = StickerSendMessage(
             package_id='6362',
             sticker_id='11087928'
@@ -87,7 +87,7 @@ def handle_message(event):
         event.reply_token,
         sticker_message)
         return        
-    elif msg == '加油貼圖':
+    elif msg == '加油':
         sticker_message = StickerSendMessage(
             package_id='6362',
             sticker_id='11087933'
@@ -96,7 +96,7 @@ def handle_message(event):
         event.reply_token,
         sticker_message)
         return        
-    elif msg == '好累貼圖':
+    elif msg == '好累':
         sticker_message = StickerSendMessage(
             package_id='6362',
             sticker_id='11087923'
@@ -105,7 +105,7 @@ def handle_message(event):
         event.reply_token,
         sticker_message)
         return
-    elif msg == '辛苦貼圖':
+    elif msg == '辛苦':
         sticker_message = StickerSendMessage(
             package_id='8525',
             sticker_id='16581300'
@@ -114,7 +114,7 @@ def handle_message(event):
         event.reply_token,
         sticker_message)
         return        
-    elif msg == '慌張貼圖':
+    elif msg == '慌張':
         sticker_message = StickerSendMessage(
             package_id='8525',
             sticker_id='16581311'
@@ -123,7 +123,7 @@ def handle_message(event):
         event.reply_token,
         sticker_message)
         return
-    elif msg == '道歉貼圖':
+    elif msg == '道歉':
         sticker_message = StickerSendMessage(
             package_id='8525',
             sticker_id='16581298'
@@ -132,7 +132,7 @@ def handle_message(event):
         event.reply_token,
         sticker_message)
         return        
-    elif msg == '期待貼圖':
+    elif msg == '期待':
         sticker_message = StickerSendMessage(
             package_id='8525',
             sticker_id='16581299'
@@ -141,7 +141,7 @@ def handle_message(event):
         event.reply_token,
         sticker_message)
         return        
-    elif msg == '問號貼圖':
+    elif msg == '問號':
         sticker_message = StickerSendMessage(
             package_id='8525',
             sticker_id='16581306'
@@ -186,8 +186,8 @@ def handle_message(event):
         reply_msg = '菲力漢堡加蛋跟一杯大冰美式咖啡'
     elif '心情' in msg:
         reply_msg = '每天都要保持好的心情'
-    elif '情人節快樂' in msg:
-        reply_msg = 'Dear Peggy 2022 情人節快樂, 很開心, 很幸運能有您這位那麼棒的女友, 喜歡跟您再一起的任何時光, 雖然不像其他人常到處玩或是大魚大肉, 但是我更喜歡跟您充滿愛的相處時光XD'
+    elif '生日快樂' in msg:
+        reply_msg = '今天是您農曆八月二日誕生日,  祝您生日快樂, 萬事如意, 天天好心情~'
 
     line_bot_api.reply_message(
         event.reply_token,
