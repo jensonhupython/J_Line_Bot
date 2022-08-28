@@ -180,16 +180,15 @@ def handle_message(event):
         reply_msg = '還沒'
     elif msg == '你是誰':
         reply_msg = '我是機器人'
-    elif '訂位' in msg:
-        reply_msg = '您想訂位, 是嗎?'
     elif msg == '今天天氣好嗎':
         reply_msg = '今天天氣很好, 適合走走'
     elif msg == '早餐想吃什麼':
         reply_msg = '菲力漢堡加蛋跟一杯大冰美式咖啡'
     elif '心情' in msg:
         reply_msg = '每天都要保持好的心情'
-    elif '生日快樂' in msg:
-        emoji = [
+    elif msg == '生日快樂':
+        emoji = 
+        [
             {
                 "index": 0, # 要放的位置
                 "productId": "5ac223c6040ab15980c9b44a", # 所屬組合 ID
@@ -205,7 +204,8 @@ def handle_message(event):
             event.reply_token,
             TextSendMessage(text='$ 今天是您農曆八月二日誕生日,  祝您生日快樂, 萬事如意, 天天好心情~ $',  emojis=emoji))
 
-        return 
+        return
+
     line_bot_api.reply_message(
         event.reply_token,
         # 目前修改程式碼的部分, 是調整讓機器人回覆什麼
