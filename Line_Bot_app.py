@@ -39,7 +39,7 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     msg = event.message.text
-    msg = msg.encode('utf-8')
+    #msg = msg.encode('utf-8')
 
     reply_msg = '看不懂你說什麼'
 
