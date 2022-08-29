@@ -237,7 +237,12 @@ def handle_message(event):
                 "text": "衣服",
                 "weight": "bold",
                 "margin": "sm",
-                "flex": 0
+                "flex": 0,
+                "action": {
+                  "type": "uri",
+                  "label": "action",
+                  "uri": "https://ec.elifemall.com.tw/products/2096605"
+                }
               },
               {
                 "type": "text",
@@ -261,7 +266,12 @@ def handle_message(event):
                 "text": "背",
                 "weight": "bold",
                 "margin": "sm",
-                "flex": 0
+                "flex": 0,
+                "action": {
+                  "type": "uri",
+                  "label": "action",
+                  "uri": "https://www.doughnut.com.tw/SalePage/Index/7714223"
+                }
               },
               {
                 "type": "text",
@@ -285,7 +295,12 @@ def handle_message(event):
                 "text": "耳朵",
                 "weight": "bold",
                 "margin": "sm",
-                "flex": 0
+                "flex": 0,
+                "action": {
+                  "type": "uri",
+                  "label": "action",
+                  "uri": "https://www.apple.com/tw/airpods-3rd-generation/"
+                }
               },
               {
                 "type": "text",
@@ -309,7 +324,12 @@ def handle_message(event):
                 "text": "眼睛",
                 "weight": "bold",
                 "margin": "sm",
-                "flex": 0
+                "flex": 0,
+                "action": {
+                  "type": "uri",
+                  "label": "action",
+                  "uri": "https://www.owndays.com/tw/zh_tw"
+                }
               },
               {
                 "type": "text",
@@ -333,7 +353,12 @@ def handle_message(event):
                 "text": "其他",
                 "weight": "bold",
                 "margin": "sm",
-                "flex": 0
+                "flex": 0,
+                "action": {
+                  "type": "uri",
+                  "label": "action",
+                  "uri": "https://i.imgur.com/e7GERSM.jpg"
+                }
               },
               {
                 "type": "text",
