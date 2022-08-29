@@ -7,9 +7,11 @@ from linebot import (
 from linebot.exceptions import (
     InvalidSignatureError
 )
-from linebot.models import (
-    MessageEvent, TextMessage, TextSendMessage, StickerSendMessage, TemplateSendMessage
-)
+# from linebot.models import (
+#     MessageEvent, TextMessage, TextSendMessage, StickerSendMessage, TemplateSendMessage
+# )
+from linebot.models import *
+import re
 
 app = Flask(__name__)
 
@@ -187,21 +189,196 @@ def handle_message(event):
     elif '心情' in msg:
         reply_msg = '每天都要保持好的心情'
     elif msg == '生日快樂':
-        emoji = [
-            {
-                "index": 0, # 要放的位置
-                "productId": "5ac223c6040ab15980c9b44a", # 所屬組合 ID
-                "emojiId": "035" # emoji ID
-            },
-            {
-                "index": 37,
-                "productId": "5ac223c6040ab15980c9b44a",
-                "emojiId": "008"
-            },
+        flex_message = FlexSendMessage(
+            alt_text='Happy Birthdar',
+            contents={
+  "type": "bubble",
+  "hero": {
+    "type": "image",
+    "url": "https://i.imgur.com/fOa2zJx.jpg",
+    "size": "full",
+    "aspectRatio": "20:13",
+    "aspectMode": "cover",
+    "action": {
+      "type": "uri",
+      "uri": "https://linecorp.com"
+    }
+  },
+  "body": {
+    "type": "box",
+    "layout": "vertical",
+    "spacing": "md",
+    "action": {
+      "type": "uri",
+      "uri": "https://linecorp.com"
+    },
+    "contents": [
+      {
+        "type": "text",
+        "text": "Peggy's Birthday 2022",
+        "size": "xl",
+        "weight": "bold"
+      },
+      {
+        "type": "box",
+        "layout": "vertical",
+        "spacing": "sm",
+        "contents": [
+          {
+            "type": "box",
+            "layout": "baseline",
+            "contents": [
+              {
+                "type": "icon",
+                "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/restaurant_regular_32.png"
+              },
+              {
+                "type": "text",
+                "text": "衣服",
+                "weight": "bold",
+                "margin": "sm",
+                "flex": 0
+              },
+              {
+                "type": "text",
+                "text": "相關物品",
+                "size": "sm",
+                "align": "end",
+                "color": "#aaaaaa"
+              }
+            ]
+          },
+          {
+            "type": "box",
+            "layout": "baseline",
+            "contents": [
+              {
+                "type": "icon",
+                "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/restaurant_large_32.png"
+              },
+              {
+                "type": "text",
+                "text": "背",
+                "weight": "bold",
+                "margin": "sm",
+                "flex": 0
+              },
+              {
+                "type": "text",
+                "text": "生財工具",
+                "size": "sm",
+                "align": "end",
+                "color": "#aaaaaa"
+              }
+            ]
+          },
+          {
+            "type": "box",
+            "layout": "baseline",
+            "contents": [
+              {
+                "type": "icon",
+                "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/restaurant_regular_32.png"
+              },
+              {
+                "type": "text",
+                "text": "耳朵",
+                "weight": "bold",
+                "margin": "sm",
+                "flex": 0
+              },
+              {
+                "type": "text",
+                "text": "放鬆器具",
+                "size": "sm",
+                "align": "end",
+                "color": "#aaaaaa"
+              }
+            ]
+          },
+          {
+            "type": "box",
+            "layout": "baseline",
+            "contents": [
+              {
+                "type": "icon",
+                "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/restaurant_large_32.png"
+              },
+              {
+                "type": "text",
+                "text": "眼睛",
+                "weight": "bold",
+                "margin": "sm",
+                "flex": 0
+              },
+              {
+                "type": "text",
+                "text": "靈魂之窗",
+                "size": "sm",
+                "align": "end",
+                "color": "#aaaaaa"
+              }
+            ]
+          },
+          {
+            "type": "box",
+            "layout": "baseline",
+            "contents": [
+              {
+                "type": "icon",
+                "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/restaurant_regular_32.png"
+              },
+              {
+                "type": "text",
+                "text": "其他",
+                "weight": "bold",
+                "margin": "sm",
+                "flex": 0
+              },
+              {
+                "type": "text",
+                "text": "萬能利器",
+                "size": "sm",
+                "align": "end",
+                "color": "#aaaaaa"
+              }
+            ]
+          }
         ]
-        line_bot_api.reply_message(
-            event.reply_token,
-            TextSendMessage(text='$ 今天是您農曆八月二日誕生日,  祝您生日快樂, 萬事如意, 天天好心情~ $',  emojis=emoji))
+      },
+      {
+        "type": "text",
+        "wrap": True,
+        "color": "#aaaaaa",
+        "size": "xxs",
+        "text": "Choose an option that you like, maybe I can help you realize"
+      }
+    ]
+  },
+  "footer": {
+    "type": "box",
+    "layout": "vertical",
+    "contents": [
+      {
+        "type": "button",
+        "style": "primary",
+        "color": "#905c44",
+        "margin": "xxl",
+        "action": {
+          "type": "uri",
+          "label": "Decision",
+          "uri": "https://i.imgur.com/8uM02O7.jpg"
+        }
+      }
+    ]
+  }
+}
+        )
+        line_bot_api.reply_message(event.reply_token, flex_message)
+        # line_bot_api.reply_message(
+        #     event.reply_token,
+        #     TextSendMessage(text="$ 今天是您農曆八月二日誕生日,  祝您生日快樂, 萬事如意, 天天好心情~ $",  emojis=emoji)
+        # )
         #reply_msg = '今天是您農曆八月二日誕生日,  祝您生日快樂, 萬事如意, 天天好心情~'
         return
 
