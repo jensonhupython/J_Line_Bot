@@ -188,7 +188,7 @@ def handle_message(event):
         reply_msg = '菲力漢堡加蛋跟一杯大冰美式咖啡'
     elif '心情' in msg:
         reply_msg = '每天都要保持好的心情'
-    elif msg == '生日快樂':
+    elif msg == '祝福Peggy生日快樂':
         flex_message = FlexSendMessage(
             alt_text='Happy Birthdar',
             contents={
