@@ -1,3 +1,11 @@
 line-bot-sdk
 gunicorn
 flask
+bs4
+pymongo
+datetime
+pandas
+SnowNLP
+emoji
+pyshorteners
+scipy
