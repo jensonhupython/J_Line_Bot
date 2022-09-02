@@ -159,17 +159,34 @@ def handle_message(event):
         buttons_template_message = TemplateSendMessage(
             alt_text='Buttons template',
             template=ButtonsTemplate(
-            title='Restaurant Menu',
-            text='請選擇類型',
+                title='Restaurant Menu',
+                text='請選擇類型',
                 actions=[
-                    MessageTemplateAction(
-                        label='台式餐廳',
-                        text='option one',
-                     ),
-                    MessageTemplateAction(
-                        label='義式餐廳',
-                        text='option two',
-                    )
+                        MessageTemplateAction(
+                            label='台式餐廳',
+                            text='option one',
+                         ),
+                        MessageTemplateAction(
+                            label='義式餐廳',
+                            text='option two',
+                        )
+                ]
+            )
+        )
+        line_bot_api.reply_message(event.reply_token, buttons_template_message)
+        return
+
+    if msg == 'Happy Bithday':
+        buttons_template_message = TemplateSendMessage(
+            alt_text='Happy Bithday',
+            template=ButtonsTemplate(
+                title='Happy Bithday Song',
+                text='Happy Bithday to Peggy',
+                actions=[
+                        URIAction(
+                            label='Happy Bithday Song',
+                            uri='https://drive.google.com/file/d/16tp9lgHW2EiIu1wYtgTH4GEQHwa3CYk3/view?usp=sharing',
+                         )
                 ]
             )
         )
