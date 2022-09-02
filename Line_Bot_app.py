@@ -169,6 +169,10 @@ def handle_message(event):
                         MessageTemplateAction(
                             label='義式餐廳',
                             text='option two',
+                        ),
+                        URITemplateAction(
+                            label='Happy Bithday Song',
+                            uri='https://drive.google.com/file/d/16tp9lgHW2EiIu1wYtgTH4GEQHwa3CYk3/view?usp=sharing'
                         )
                 ]
             )
@@ -176,16 +180,16 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token, buttons_template_message)
         return
 
-    if msg == 'Happy Bithday':
+    if msg == '生日快樂歌':
         buttons_template_message = TemplateSendMessage(
-            alt_text='Happy Bithday',
+            alt_text='Happy Birthday',
             template=ButtonsTemplate(
-                title='Happy Bithday Song',
-                text='Happy Bithday to Peggy',
+                title='Happy Birthday Song',
+                text='Happy Birthday to Peggy',
                 actions=[
                         URIAction(
-                            label='Happy Bithday Song',
-                            uri='https://drive.google.com/file/d/16tp9lgHW2EiIu1wYtgTH4GEQHwa3CYk3/view?usp=sharing',
+                            label='Happy Birthday Song',
+                            uri='https://drive.google.com/file/d/16tp9lgHW2EiIu1wYtgTH4GEQHwa3CYk3/view?usp=sharing'
                          )
                 ]
             )
